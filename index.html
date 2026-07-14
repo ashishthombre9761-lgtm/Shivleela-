@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Your Apology Letter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-wrapper">
+            <h1>✉️ Create Your Letter</h1>
+            <p class="subtitle">Share your message, photo, and voice</p>
+
+            <form id="apologyForm">
+                <!-- Name Input -->
+                <div class="form-group">
+                    <label for="name">Your Name *</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+
+                <!-- Text Input -->
+                <div class="form-group">
+                    <label for="message">Your Message *</label>
+                    <textarea id="message" placeholder="Write your message here..." rows="5" required></textarea>
+                </div>
+
+                <!-- Photo Upload -->
+                <div class="form-group">
+                    <label for="photo">Upload Photo (Optional)</label>
+                    <input type="file" id="photo" accept="image/*">
+                    <small>Supported: JPG, PNG, GIF</small>
+                    <div id="photoPreview" class="preview"></div>
+                </div>
+
+                <!-- Audio Upload -->
+                <div class="form-group">
+                    <label for="audio">Upload Audio (Optional)</label>
+                    <input type="file" id="audio" accept="audio/*">
+                    <small>Supported: MP3, WAV, OGG</small>
+                    <div id="audioPreview" class="preview"></div>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn-submit">Create Letter</button>
+            </form>
+
+            <!-- QR Code Display -->
+            <div id="qrSection" class="qr-section hidden">
+                <h2>✅ Letter Created!</h2>
+                <p>Share this QR code to let others view your letter:</p>
+                <div id="qrCodeContainer" class="qr-container"></div>
+                <button class="btn-download" id="downloadQr">📥 Download QR Code</button>
+                <button class="btn-view" id="viewLetter">👁️ View Your Letter</button>
+                <button class="btn-new" id="createNew">📝 Create Another</button>
+            </div>
+
+            <!-- Loading Indicator -->
+            <div id="loading" class="loading hidden">
+                <div class="spinner"></div>
+                <p>Creating your letter...</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase Scripts -->
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.0/firebase-database.js"></script>
+    
+    <!-- QR Code Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    
+    <!-- Main Script -->
+    <script src="script.js"></script>
+</body>
+</html>
